@@ -11,4 +11,4 @@ class SiteController {
 }
 
 // Tạo ra một đối tượng và xuất ra ngoài
-module.exports = new SiteController(); 
+module.exports = new SiteController();

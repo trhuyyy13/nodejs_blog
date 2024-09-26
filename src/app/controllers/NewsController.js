@@ -11,4 +11,4 @@ class NewsController {
 }
 
 // Tạo ra một đối tượng và xuất ra ngoài
-module.exports = new NewsController(); 
+module.exports = new NewsController();
