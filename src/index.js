@@ -22,11 +22,11 @@ app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'resources/views'));
 
 // Kiểm tra xem đường dẫn tới thư mục views có đúng không
-console.log(path.join(__dirname, 'resources/views'));
+console.log(path.join(__dirname, 'resources','views'));
 
 //Khoi tao tuyen duong
 route(app);
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`);
+    console.log(`App listening on port ${port}`);
 });

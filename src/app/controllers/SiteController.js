@@ -1,14 +1,16 @@
 const Course = require('../models/Course'); // Import model Course từ file models/Course.js
+const { mutipleMongooseToObject } = require('../../util/mongoose');
 
 class SiteController {
     //[GET] /
-    async index(req, res) {
-        try {
-            const courses = await Course.find();  // Sử dụng await để chờ kết quả
-            res.json(courses);
-        } catch (err) {
-            res.status(400).json({ error: 'ERROR' });  // Xử lý lỗi nếu có
-        }
+    index(req, res, next) {
+        Course.find({})
+            .then(courses => {
+                res.render('home', { 
+                    courses: mutipleMongooseToObject(courses) // Truyền courses vào hàm để chuyển đổi
+                }); 
+            })
+            .catch(error => next(error)); // Gọi hàm next nếu có lỗi
     }
 
     //[GET] /search
